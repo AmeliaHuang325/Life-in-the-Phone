@@ -2,7 +2,7 @@
 title: "Life Calculated by the Phone"
 author: "Shuyang Huang & Jonghoon Park"
 date: "3/5/2021"
-output: html_document
+output: rmarkdown::github_document
 ---
 
 ```{r setup, include=FALSE}

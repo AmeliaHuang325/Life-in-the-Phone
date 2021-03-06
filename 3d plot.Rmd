@@ -1,6 +1,6 @@
 ---
-title: "ADR-Assignment"
-author: "Shuyang Huang"
+title: "Life Calculated by the Phone"
+author: "Shuyang Huang & Jonghoon Park"
 date: "3/5/2021"
 output: html_document
 ---
@@ -10,16 +10,17 @@ knitr::opts_chunk$set(echo = TRUE, warning = F, message = F)
 ```
 
 ```{r, include = F}
-setwd("~/Desktop/MArch-Columbia/4 - ADR 2/Assignment 1C")
-dat <- openxlsx::read.xlsx("/Users/Young/Desktop/MArch-Columbia/4 - ADR 2/Assignment 1C/ADR2 - 2A - DEAR SYSTEMS .xlsx", sheet = 2)
+setwd("~/Desktop/MArch-Columbia/4 - ADR 2/Assignment 1C/Life-in-the-Phone")
+dat <- openxlsx::read.xlsx("/Users/Young/Desktop/MArch-Columbia/4 - ADR 2/Assignment 1C/Life-in-the-Phone/ADR2 - 2A - DEAR SYSTEMS .xlsx", sheet = 2)
 
 library(tidyverse)
 library(plotly)
 
 dat <- gather(dat, sleep:entertainment, key = "type", value = "value")
 ```
+# 2/8 - 2/14
 
-```{r}
+```{r, echo = FALSE}
 dat1 <- dat %>% filter(week == 1)
 
 dat1$id <- seq_len(nrow(dat1))
@@ -42,7 +43,9 @@ plot_ly(color = ~factor(name), showlegend = F) %>%
 
 ```
 
-```{r}
+# 2/15 - 2/21
+
+```{r, echo = FALSE}
 dat2 <- dat %>% filter(week == 2)
 
 dat2$id <- seq_len(nrow(dat2))
@@ -65,7 +68,9 @@ plot_ly(color = ~factor(name), showlegend = F) %>%
 
 ```
 
-```{r}
+# 2/22 - 2/28
+
+```{r, echo = FALSE}
 dat3 <- dat %>% filter(week == 3)
 
 dat3$id <- seq_len(nrow(dat3))
@@ -88,7 +93,9 @@ plot_ly(color = ~factor(name), showlegend = F) %>%
 
 ```
 
-```{r}
+# 3/1 - 
+
+```{r, echo = FALSE}
 dat4 <- dat %>% filter(week == 4)
 
 dat4$id <- seq_len(nrow(dat4))
